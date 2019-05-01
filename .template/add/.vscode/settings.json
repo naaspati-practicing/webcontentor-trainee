@@ -1,0 +1,26 @@
+{
+  "files.exclude": {
+    "yarn.lock": true,
+    "node_modules": true,
+    ".vscode": true,
+    ".eslintrc.js": true,
+    ".gitignore": true,
+    ".jsbeautifyrc": true,
+    "package.json": true,
+    "tsconfig.json": true,
+    "live-server.js": true,
+    "*.zip": true,
+    "*.cmd": true,
+	"README.md":true,
+	"gulpfile.js":true,
+	".editorconfig":true,
+  },
+  "emmet.includeLanguages":{
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
+  "git.enabled": false,
+  "eslint.packageManager": "yarn"
+}

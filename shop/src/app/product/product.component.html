@@ -1,0 +1,14 @@
+<div [class]="is_selected ? 'card m-2 border border-success' : 'card m-2'" style="width: 200px" (mousedown)="selected()">
+  <img class="card-img-top" src="{{product.imgUrl}}" alt="{{product.name}}">
+  <div class="card-body">
+    <div class="card-title">
+    <h5>{{product.name}}</h5>
+    <span>{{product.price | currency:'INR':true }}</span>
+    </div>
+    
+    <p class="card-text">{{product.description}}</p>
+    <div class='btns'>
+    </div>
+  </div>
+</div>
+  
