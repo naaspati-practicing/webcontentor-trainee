@@ -1,0 +1,7 @@
+error: 
+    ERROR in node_modules/@angular/fire/firebase.app.module.d.ts(17,22): error TS2420: Class 'FirebaseApp' incorrectly implements interface 'App'.
+    Property 'performance' is missing in type 'FirebaseApp'.
+	
+fix: 
+  edit node_modules/@angular/fire/firebase.app.module.d.ts and add following line 
+    performance(): firebase.performance.Performance;

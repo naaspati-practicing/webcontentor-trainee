@@ -1,25 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Product } from '../product/product';
-// import { AngularFirestore } from '@angular/fire/firestore';
+import { SelectedProductService } from './selected-product.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html'
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
   title = 'Product List';
   products: Product[] = dummy();
-  selected_product = null;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    //dummy().forEach(o => this.db.collection('/products').add(o));
-  }
-  
-  selected(product: Product) {
-    this.selected_product = product;
-  }
+  constructor(
+    private db: AngularFirestore, 
+    private sel: SelectedProductService
+    ) { }
 
   add() {
     console.log("add");
