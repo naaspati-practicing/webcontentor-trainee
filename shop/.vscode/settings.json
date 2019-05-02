@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        ".gitignore": true,
+        ".vscode": true,
+        "angular.json": true,
+        "node_modules": true,
+        "package.json": true,
+        "pugi.js": true,
+        "README.md": true,
+        "tsconfig.json": true,
+        "tslint.json": true,
+        "yarn.lock": true
+    }
+}

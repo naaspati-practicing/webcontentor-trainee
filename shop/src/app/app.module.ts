@@ -12,6 +12,11 @@ import { HeaderComponent } from './header.component';
 import { ProductComponent } from './product/product.component';
 import { ProductsComponent } from './products/products.component';
 import { SelectedProductService } from './products/selected-product.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProductsService } from './products/products.service';
+import { DummyProductService } from './products/dummy.products.service';
+import { FireBaseProductsService } from './products/firebase.products.service';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +32,14 @@ import { SelectedProductService } from './products/selected-product.service';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ],
-  providers: [SelectedProductService],
+  providers: [SelectedProductService, 
+    // {useClass:DummyProductService, provide:ProductsService }
+    {useClass:FireBaseProductsService, provide:ProductsService }
+
+  ],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent]
 })
 export class AppModule { }

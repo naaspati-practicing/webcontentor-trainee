@@ -13,11 +13,11 @@ const routes: Routes = [ {
   component: FrontComponent
 },
 {
-  path:'add',
+  path:'products/add',
   component: AddEditComponent
 },
 {
-  path:'edit',
+  path:'products/edit',
   component: AddEditComponent
 },
 

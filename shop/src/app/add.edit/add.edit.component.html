@@ -1,3 +1,32 @@
-<p>
-  add.edit works!
-</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" style="margin:10%;margin-top:2%">
+    <div class="form-group">
+      <label for="product_name">Name</label>
+      <input class="form-control" id="product_name" type="text" formControlName="name"/>
+    </div>
+    <div class="form-group">
+      <label for="product_price">Price</label>
+      <input class="form-control" id="product_price" type="number" formControlName="price"/>
+    </div>
+    <div class="form-group">
+      <label for="product_available_quantity">Available Quantity</label>
+      <input class="form-control" id="product_available_quantity" type="number" formControlName="available_quantity"/>
+    </div>
+    <div class="form-group">
+      <label for="product_max_quantity_per_customer">Max quantity per customer</label>
+      <input class="form-control" id="product_max_quantity_per_customer" type="number" formControlName="max_quantity_per_customer"/>
+    </div>
+  <div class="form-check">
+    <input class="form-check-input" id="isveg" type="checkbox" formControlName="isVegetarian"/>
+    <label class="form-check-label" for="isveg">Vegetarian</label>
+  </div>
+    <div class="form-group">
+      <label for="product_imgUrl">Image</label>
+      <input class="form-control-file" id="product_imgUrl" type="file" formControlName="imgUrl"/>
+    </div>
+    <div class="form-group">
+      <label for="product_description">Description</label>
+      <textarea class="form-control" cols="30" rows="10" formControlName="description"></textarea>
+    </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+</form>
