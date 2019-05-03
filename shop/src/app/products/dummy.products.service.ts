@@ -41,7 +41,7 @@ export class DummyProductService extends ProductsService {
 
      private indexOf(product: Product): number {
           for (let n = 0; n < this._products.length; n++) {
-               if (this._products[n].product_id === product.product_id)
+               if (this._products[n].id === product.id)
                     return n;
           }
           return -1;

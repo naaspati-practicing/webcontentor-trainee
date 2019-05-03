@@ -9,3 +9,4 @@ yarn.lock
 **/.recommenders/
 **/.metadata/
 **/.gradle/
+git2.cmd

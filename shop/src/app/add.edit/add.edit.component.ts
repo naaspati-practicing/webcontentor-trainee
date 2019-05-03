@@ -22,7 +22,7 @@ export class AddEditComponent implements OnInit {
     private router: Router
   ) {
     this.form = fb.group({
-      product_id: [''],
+      id: [''],
       name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       price: ['', Validators.compose([Validators.required, Validators.min(0.01)])],
       available_quantity: ['', Validators.compose([Validators.required, Validators.min(0)])],
