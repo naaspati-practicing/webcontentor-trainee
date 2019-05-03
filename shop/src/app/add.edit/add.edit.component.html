@@ -22,11 +22,11 @@
   </div>
     <div class="form-group">
       <label for="product_imgUrl">Image</label>
-      <input class="form-control-file" id="product_imgUrl" type="file" formControlName="imgUrl"/>
+      <input class="form-control" id="product_imgUrl" type="text" formControlName="imgUrl"/>
     </div>
     <div class="form-group">
       <label for="product_description">Description</label>
       <textarea class="form-control" cols="30" rows="10" formControlName="description"></textarea>
     </div>
-  <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+  <button class="btn btn-primary" type="submit" [disabled]="!form.valid">{{add_mode ? 'Add' : 'Save Changes'}}</button>
 </form>

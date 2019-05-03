@@ -5,10 +5,10 @@ export class ProductsService {
      allProducts(): Observable<Product[]>  {
           throw Error();
      }
-     persist(product: Product): Promise<Product> {
+     persist(product: Product): Promise<void> {
           throw Error();
      }
-     remove(product: Product): void {
+     remove(product: Product):  Promise<void> {
           throw Error();
      }
 }

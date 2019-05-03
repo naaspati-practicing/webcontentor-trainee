@@ -2,8 +2,8 @@
   <h1 class="mx-auto m-5" style="width: 300px;">{{title}}</h1>
   <div class="nav mr-5 justify-content-end">
       <a class="btn btn-primary mr-2" routerLink="add">Add</a>
-      <a class="btn btn-secondary mr-2" routerLink="edit">Edit</a>
-      <a class="btn btn-danger mr-2" routerLink="remove">Remove</a>
+      <button class="btn btn-secondary mr-2" routerLink="edit" [disabled]='not_selected'>Edit</button>
+      <button class="btn btn-danger mr-2" (click)="remove()"  [disabled]='not_selected'>Remove</button>
   </div>
   <section class="product-list d-flex flex-wrap mx-auto">
     <app-product *ngFor="let product of products;" [product]="product" (selection)="selected($event)"></app-product>

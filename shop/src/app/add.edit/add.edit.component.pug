@@ -5,8 +5,8 @@ form([formGroup]='form', (ngSubmit)='onSubmit()', style='margin:10%;margin-top:2
       if block
         block
       else 
-        //- `${formControlName}.invalid ? '${cls ? cls : "form-control"} is-invalid' : '${cls ? cls : "form-control"} is-valid'`
-        input(class=cls ? cls : "form-control", id="product_"+formControlName, type=type, formControlName=formControlName)
+        //- input('[ngClass]'=`{'${cls ? cls : 'form-control'}':true, 'is-valid':!${formControlName}.invalid, 'is-invalid':${formControlName}.invalid}`, id="product_"+formControlName, type=type, formControlName=formControlName)
+        input(class=cls ? cls : 'form-control', id="product_"+formControlName, type=type, formControlName=formControlName)
 
   
   //- +field("", "product_id")
@@ -17,7 +17,8 @@ form([formGroup]='form', (ngSubmit)='onSubmit()', style='margin:10%;margin-top:2
   .form-check
     input#isveg.form-check-input(type="checkbox", formControlName="isVegetarian")
     label.form-check-label(for="isveg") Vegetarian
-  +field("Image", "file", "imgUrl", "form-control-file" )
+  //- +field("Image", "file", "imgUrl", "form-control-file" )
+  +field("Image", "text", "imgUrl", "form-control" )
   +field("Description",null, "description")
      textarea.form-control(cols=30, rows=10, formControlName="description")
-  button.btn.btn-primary(type="submit", [disabled]="!form.valid") Submit
+  button.btn.btn-primary(type="submit", [disabled]="!form.valid") {{add_mode ? 'Add' : 'Save Changes'}}

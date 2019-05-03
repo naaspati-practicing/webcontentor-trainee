@@ -1,7 +1,6 @@
 export class Product {
     
     constructor(
-        public id: any,
         public name: string,
         public price: number,
         public available_quantity: number, 
