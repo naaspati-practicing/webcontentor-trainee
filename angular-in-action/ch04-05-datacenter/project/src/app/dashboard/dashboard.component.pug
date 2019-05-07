@@ -1,0 +1,21 @@
+.container.mt-2
+  .row
+    app-metric.col-sm-6('[used]'='cpu.used', '[available]'='cpu.available')
+      metric-title CPU
+      metric-description utilization of CPU cores
+    app-metric.col-sm-6('[used]'='mem.used', '[available]'='mem.available')
+      metric-title Memory
+      metric-description utilization of memory in GB
+
+.container.mt-2
+ .card.card-block
+   .card-body
+      mixin cluster(title, clster)
+        nav.navbar.navbar-dark.bg-dark
+          h1.navbar-brand.mb-0=title
+        table.table.table-hover(app-nodes)
+          tr(app-node-row, *ngFor=`let node of ${clster}` '[node]'='node')
+
+      +cluster('Cluster 1', 'cluster1')
+      +cluster('Cluster 2', 'cluster2')
+     

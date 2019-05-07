@@ -10,5 +10,10 @@
         "tsconfig.json": true,
         "tslint.json": true,
         "yarn.lock": true
-    }
+    },
+
+    "css.remoteStyleSheets": [
+        "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      ]
 }
+

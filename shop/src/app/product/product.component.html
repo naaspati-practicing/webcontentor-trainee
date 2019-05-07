@@ -1,4 +1,4 @@
-<div [class]="is_selected ? 'card m-2 border border-success' : 'card m-2'" style="width: 200px" (mousedown)="selected()">
+<div [class]="is_selected ? 'card m-2 border border-success' : 'card m-2'" style="width: 200px; height:300px; overflow: hidden;" (mousedown)="selected()">
   <img class="card-img-top" src="{{product.imgUrl}}" alt="{{product.name}}">
   <div class="card-body">
     <div class="card-title">

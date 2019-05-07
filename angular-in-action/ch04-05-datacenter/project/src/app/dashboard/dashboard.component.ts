@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this._generateData();
-    this.interval = interval(15000).subscribe(this._generateData);
+    this.interval = interval(1500).subscribe(() => this._generateData());
   }
   private _generateData() {
     this.cluster1 = [];

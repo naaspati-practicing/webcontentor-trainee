@@ -20,7 +20,11 @@ const routes: Routes = [ {
   path:'products/edit',
   component: AddEditComponent
 },
-
+{
+  path:'',
+  redirectTo:'home',
+  pathMatch: 'full'
+}
 ];
 
 @NgModule({

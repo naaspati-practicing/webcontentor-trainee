@@ -38,21 +38,18 @@ export class AddEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let o: Observable<void> = null;
-    
-    this.add_mode = this.router.url.endsWith("/add");
-    if (!this.add_mode) {
-      delete this.sel.selectedProduct['product_id'];
+
+    this.add_mode = this.router.url.endsWith("/add"); 
+    if (!this.add_mode)
       this.form.setValue(this.sel.selectedProduct);
-    }
     else
       this.form.reset();
   }
   onSubmit() {
     this.db.persist(this.form.value)
-    .then(() => this.router.navigateByUrl("/products"))
-    .catch(e => console.error(e));
-    
+      .then(() => this.router.navigateByUrl("/products"))
+      .catch(e => console.error(e));
+
   }
 
 }
