@@ -4,4 +4,6 @@
       h1.navbar-brand.mb-0
         ng-content(select='metric-title')
     h4.card-title {{value}}/{{max}} ({{value/max | percent:'1.0-2'}})
-      
+    p.card-text
+      ng-content(select='metric-description')
+    ngb-progressbar('[value]'='value', '[max]'='max', [type]="isDanger() ? 'danger' : 'success'")
