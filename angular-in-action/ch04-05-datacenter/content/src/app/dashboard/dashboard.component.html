@@ -1,0 +1,12 @@
+
+<div class="container mt-2">
+  <div class="card card-block">
+    <nav class="navbar navbar-dark bg-dark mb-1">
+      <h1 class="navbar-brand mb-0">Overall Metrics</h1>
+    </nav>
+    <div class="row">
+      <app-metric class="col-sm-6" [used]="cpu.used" [available]="cpu.available" [title]="'CPU'" [description]="'utilization of CPU cores'"></app-metric>
+      <app-metric class="col-sm-6" [used]="mem.used" [available]="mem.available" [title]="'Memory'" [description]="'utilization of Memory in GB'"></app-metric>
+    </div>
+  </div>
+</div>

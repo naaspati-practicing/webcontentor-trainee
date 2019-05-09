@@ -1,0 +1,8 @@
+.container.mt-2
+  .card.card-block
+    nav.navbar.navbar-dark.bg-dark.mb-1
+      h1.navbar-brand.mb-0 Overall Metrics
+    .row
+      app-metric.col-sm-6('[used]'="cpu.used" '[available]'="cpu.available" '[title]'="'CPU'" '[description]'="'utilization of CPU cores'")
+      app-metric.col-sm-6('[used]'="mem.used" '[available]'="mem.available" '[title]'="'Memory'" '[description]'="'utilization of Memory in GB'")
+        
