@@ -1,8 +1,8 @@
 .card.card-block
   .card-body
     nav.navbar.navbar-dark.bg-primary.mb-1('[ngClass]'="{'bg-danger':isDanger(), 'bg-success':!isDanger()}")
-      h1.navbar-brand.mb-0: ng-content(select='metric-title') 
+      h1.navbar-brand.mb-0 {{title}}
     h4.card-title {{value}}/{{max}} ({{value / max | percent:'1.0-2'}})
-    p.card-text: ng-content(select='metric-description') 
+    p.card-text {{description}}
     ngb-progressbar( '[value]'="value" '[max]'="max" '[type]'="isDanger() ? 'danger' : 'success'")
     

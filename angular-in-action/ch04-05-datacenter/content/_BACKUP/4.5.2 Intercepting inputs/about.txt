@@ -1,0 +1,7 @@
+The main idea here is that instead of having a property to bind to directly, you bind
+the input to the setter method, which stores the real value on a private property so you
+can protect it from direct access. The setter method is also where you can run any vali-
+dation logic. Then you use the getter method to return the value of the private property
+anytime it’s requested.
+
+Listing 4.5   Metric component intercepting inputs

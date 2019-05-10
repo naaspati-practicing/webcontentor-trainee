@@ -1,0 +1,8 @@
+content projection, allows us to declare the place to insert
+external content into our component.
+
+Listing 4.6   Nodes component template
+Listing 4.7   Nodes Row component template
+Listing 4.9   Dashboard using the Nodes and Nodes Row components
+Listing 4.10   Metric component template with content projection
+Listing 4.11   Projecting metric information into the component

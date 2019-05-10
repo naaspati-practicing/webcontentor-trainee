@@ -7,6 +7,9 @@ import { __values } from 'tslib';
   styleUrls: ['./metric.component.css']
 })
 export class MetricComponent {
+  
+  @Input() title = '';
+  @Input() description = '';
   private _value = 0;
   private _max = 100;
 

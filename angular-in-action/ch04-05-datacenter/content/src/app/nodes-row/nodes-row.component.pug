@@ -1,0 +1,10 @@
+th(scope='row') {{node.name}}
+mixin tdm(name)
+    td('[class.table-danger]'=`isDanger('${name}')`)=`{{node.${name}.used}}/{{node.${name}.available}}`
+    td('[class.table-danger]'=`isDanger('${name}')`)=`{{node.${name}.used}}/{{node.${name}.available | percent}}`
+  
++tdm('cpu')
++tdm('mem')
+td: button.btn.btn-primary View
+
+ 
