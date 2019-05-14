@@ -1,0 +1,15 @@
+
+<div class="model-header">
+  <button class="close" aria-label="Close" (click)="activeModal.dismiss()"><span aria-hidden="true">*</span></button>
+  <h4 class="model-title">{{node.name}}</h4>
+</div>
+<div class="modal-body container">
+    <div class="col-xs-6">
+      <app-metric [used]="node.cpu.used" [available]="node.cpu.available"></app-metric>
+      <metric-title>CPU</metric-title>
+    </div>
+    <div class="col-xs-6">
+      <app-metric [used]="node.mem.used" [available]="node.mem.available"></app-metric>
+      <metric-title>Memory</metric-title>
+    </div>
+</div>

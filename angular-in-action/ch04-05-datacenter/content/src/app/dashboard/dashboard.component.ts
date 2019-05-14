@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription, interval } from 'rxjs';
+import { Component, OnDestroy, OnInit, Output, EventEmitter } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   cluster1: Node[];
   cluster2: Node[];
   interval: Subscription;
+  @Output() onRefresh = new EventEmitter<Date>();
 
   constructor() { }
 
@@ -23,7 +24,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.interval.unsubscribe();
   }
-  private generateData() {
+  public generateData() {
     this.cpu = { used: 0, available: 0 };
     this.mem = { used: 0, available: 0 };
 

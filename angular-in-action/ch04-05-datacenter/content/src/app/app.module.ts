@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './navbar/nabvar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MetricComponent } from './metric/metric.component';
-import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbProgressbarModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NodesComponent } from './nodes/nodes.component';
-import { NodesRowComponent } from './nodes-row/nodes-row.component'
+import { NodesRowComponent } from './nodes-row/nodes-row.component';
+import { AlertComponent } from './alert/alert.component';
+import { NodesDetailComponent } from './nodes-detail/nodes-detail.component'
 
 @NgModule({
   declarations: [
@@ -16,13 +18,20 @@ import { NodesRowComponent } from './nodes-row/nodes-row.component'
     DashboardComponent,
     MetricComponent,
     NodesComponent,
-    NodesRowComponent 
+    NodesRowComponent,
+    NodesDetailComponent,
+    AlertComponent
+  ],
+  entryComponents: [
+    NodesDetailComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
-    NgbProgressbarModule
+    NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

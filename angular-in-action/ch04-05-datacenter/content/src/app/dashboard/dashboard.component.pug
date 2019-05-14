@@ -1,4 +1,14 @@
 .container.mt-2
+  .row
+    mixin appMetric(name, title, description)
+      app-metric.col-sm-6('[used]'=`${name}.used` '[available]'=`${name}.available`)
+        metric-title=title
+        metric-description=description
+    
+    +appMetric('cpu', 'CPU', 'utilization of CPU cores')
+    +appMetric('mem', 'Memory', 'utilization of memory in GB')
+
+.container.mt-2
   .card.card-block
     .card-body
       mixin clstr(title, cluster_name)
@@ -9,4 +19,5 @@
       
       +clstr("Cluster 1", 'cluster1')
       +clstr("Cluster 2", 'cluster2')    
-      
+
+<template ngbModalContainer></template>
