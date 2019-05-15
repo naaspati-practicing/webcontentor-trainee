@@ -1,0 +1,43 @@
+
+<app-alert></app-alert>
+<div class="main-container">
+  <header class="header-6">
+    <div class="branding"><a class="nav-link">
+        <clr-icon shape="analytics"></clr-icon></a><span class="title">Fantasy Portfolio</span></div>
+    <div class="header-nav"><span class="nav-link"><span class="nav-text">Cash: {{accountService.balance | currency:'USD':'symbol':'.2'}}</span></span><span class="nav-link"><span class="nav-text">Value: {{accountService.value | currency:'USD':'symbol':'.2'}}</span></span><span class="nav-link"><span class="nav-text">Cost: {{accountService.cost | currency:'USD':'symbol':'.2'}}</span></span><span class="nav-link"><span class="nav-text">Return: {{accountService.value - accountService.cost | currency:'USD':'symbol':'.2'}}</span></span>
+    </div>
+    <div class="header-actions"><span class="nav-link"><span class="nav-text">All data is fictitious</span></span><a class="nav-link nav-icon tooltip tooltip-bottom-left" (click)="toggleRefresh()" [class.active]="refresh">
+              <clr-icon shape="sync"></clr-icon><span class="tooltip-content">Toggle Auto Refresh</span></a><a class="nav-link nav-icon tooltip tooltip-bottom-left" (click)="reset()">
+              <clr-icon shape="remove"></clr-icon><span class="tooltip-content">Reset Your Portfolio</span></a>
+    </div>
+  </header>
+  <nav class="subnav">
+    <app-ticker [stocks]="stocks"></app-ticker>
+  </nav>
+  <div class="content-container">
+    <div class="content-area">
+      <div class="row">
+        <div class="clr-col-lg-5 clr-col-md-12 clr-col-sm-12 clr-col-xs-12">
+          <div class="card">
+            <div class="card-block">
+              <div class="card-title">Your Portfolio</div>
+              <div class="card-text">
+                <app-investments></app-investments>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clr-col-lg-7 clr-col-md-12 clr-col-sm-12 clr-col-xs-12">
+          <div class="card">
+            <div class="card-block">
+              <div class="card-title">All Stocks</div>
+              <p class="card-text">
+                <app-stocks [stocks]="stocks"></app-stocks>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

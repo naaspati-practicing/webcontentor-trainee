@@ -1,0 +1,13 @@
+.model-header
+  button.close(aria-label='Close', '(click)'='activeModal.dismiss()')
+    span(aria-hidden='true') *
+  h4.model-title {{node.name}}
+.modal-body.container
+  mixin appMetric(name, title)
+    .col-xs-6
+      app-metric('[used]'=`node.${name}.used` '[available]'=`node.${name}.available`)
+      metric-title=title
+  +appMetric('cpu', 'CPU')
+  +appMetric('mem', 'Memory')
+  
+  

@@ -1,0 +1,42 @@
+app-alert
+mixin icon(shape)
+  clr-icon(shape=shape)
+
+.main-container
+  header.header-6
+    .branding
+      a.nav-link
+        +icon('analytics')
+      span.title Fantasy Portfolio
+    .header-nav
+      mixin link(title, name, value)
+        span.nav-link
+          span.nav-text=`${title}: {{${value ? value : 'accountService.'.concat(name)} | currency:'USD':'symbol':'.2'}}`
+      +link('Cash', 'balance')
+      +link('Value', 'value')
+      +link('Cost', 'cost')
+      +link('Return', null, 'accountService.value - accountService.cost')
+    .header-actions
+      span.nav-link: span.nav-text All data is fictitious
+      mixin endBtn(click, active, icon, title)
+        a.nav-link.nav-icon.tooltip.tooltip-bottom-left('(click)'=click '[class.active]'=active)
+          +icon(icon)
+          span.tooltip-content=title
+      
+      +endBtn('toggleRefresh()', 'refresh', 'sync', 'Toggle Auto Refresh')
+      +endBtn('reset()', false, 'remove', 'Reset Your Portfolio')
+  nav.subnav
+    app-ticker('[stocks]'='stocks')
+  .content-container
+    .content-area
+      .row
+        .clr-col-lg-5.clr-col-md-12.clr-col-sm-12.clr-col-xs-12
+          .card
+            .card-block
+              .card-title Your Portfolio
+              .card-text: app-investments
+        .clr-col-lg-7.clr-col-md-12.clr-col-sm-12.clr-col-xs-12
+          .card
+            .card-block
+              .card-title All Stocks
+              p.card-text: app-stocks('[stocks]'='stocks')

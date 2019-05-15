@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        "_BACKUP": true,
+        ".gitignore": true,
+        ".vscode": true,
+        "angular.json": true,
+        "node_modules": true,
+        "package.json": true,
+        "pugi.js": true,
+        "README.md": true,
+        "tsconfig.json": true,
+        "tslint.json": true,
+        "yarn.lock": true
+    },
+
+    "css.remoteStyleSheets": [
+        "https://unpkg.com/@clr/ui/clr-ui.min.css"
+      ]
+}
+
