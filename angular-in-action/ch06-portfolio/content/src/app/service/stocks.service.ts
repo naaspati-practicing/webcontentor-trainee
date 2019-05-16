@@ -3,10 +3,8 @@ import { Stock } from './stocks.modal';
 import { ConfigService } from '../config.service';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
-]export class StocksService {
+@Injectable()
+export class StocksService {
 
   constructor(private http: HttpClient) { }
 

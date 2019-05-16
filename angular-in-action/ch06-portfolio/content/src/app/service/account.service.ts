@@ -7,9 +7,7 @@ import { CurrencyPipe } from '@angular/common';
 
 const defaultBalance = 10000;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AccountService {
   private _balance = defaultBalance;
   private _cost = 0;

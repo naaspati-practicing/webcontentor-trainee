@@ -1,0 +1,13 @@
+.subnav
+  .nav
+    li(*ngIf='!stocks.length') Loading stocks...
+    li.nav-item(*ngFor='let stock of stocks', '[@slideOut]')
+      mixin icon(shape, condition)
+        clr-icon(shape=shape, *ngIf!=`stock.change ${condition}`)
+      
+      +icon('caret up', '> 0')
+      +icon('caret down', '< 0')
+      +icon('caret right', '== 0')
+      | {{stock.change | currency:'USD':'symbol':'.2'}} - {{stock.price | currency:'USD':'symbol':'.2'}} {{stock.symbol}} ({{stock.name}})
+      
+      

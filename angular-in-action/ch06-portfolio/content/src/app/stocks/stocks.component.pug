@@ -1,0 +1,21 @@
+clr-datagrid
+  mixin dgc(name, title)
+    clr-dg-column('[clrDgField]'=`'${name}'`)=title
+  +dgc('symbol', 'Symbol')
+  +dgc('name', 'Name')
+  +dgc('price', 'Price')
+  +dgc('change', 'Change')
+  clr-dg-column
+
+  clr-dg-row(*clrDgItems='let stock of stocks')
+    clr-dg-cell {{stock.symbol}}
+    clr-dg-cell {{stock.name}}
+    clr-dg-cell {{stock.price | currency:'USD':'symbol':'.2'}}
+    clr-dg-cell {{stock.change | currency:'USD':'symbol':'.2'}}
+    clr-dg-cell.btn-cell
+      button.btn.btn-sm('(click)'='buy(stock)') Buy 
+  
+  clr-dg-footer
+    | {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{total}} stocks
+    clr-dg-pagination('#pagination' '[clrDgPageSize]'=10)
+  

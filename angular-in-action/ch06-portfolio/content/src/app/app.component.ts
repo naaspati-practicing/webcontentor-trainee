@@ -24,15 +24,30 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.load();
     this.accountService.init();
+
     this.interval = interval(1500).subscribe(() => {
       if (this.refresh)
         this.load();
     });
   }
-  load() {
-    throw new Error("Method not implemented.");
+  reset() {
+    this.accountService.reset();
+    this.alertService.alert(`You have reset your portfolio!`);
   }
+  toggleRefresh(): void {
+    this.refresh = !this.refresh;
+    let onOff = (this.refresh) ? 'on' : 'off';
+    this.alertService.alert(`You have turned automatic refresh ${onOff}`, 'info', 0);
+  }
+  private load() {
+    this.stockService.getStocks()
+      .subscribe(
+        stocks => this.stocks = stocks,
+        error => console.error('There was an error loading stocks:', error)
+      );
+  }
+
   ngOnDestroy(): void {
-    this.interval
+    this.interval.unsubscribe();
   }
 }

@@ -1,0 +1,20 @@
+table.table
+  thead
+    tr
+      each val in ['Stock', 'Cost', 'Value','Change', '' ]
+        th=val
+  tbody
+    tr(*ngFor='let stock of stocks; let i = index;')
+      td {{stock.symbol}}
+      td {{stock.cost | currency:'USD':'symbol':'.2'}}
+      td {{stock.price | currency:'USD':'symbol':'.2'}}
+      td {{stock.change | currency:'USD':'symbol':'.2'}}
+      td.btn-cell: button.btn.btn-sm('(click)'='sell(i)') Sell
+    tr(*ngIf="!stocks.length")
+      td(colspan=5) You don't have any stocks, buy some!
+  tfoot
+    tr
+      th Totals
+      th {{accountService.cost | currency:'USD':'symbol':'.2'}}
+      th {{accountService.value | currency:'USD':'symbol':'.2'}}
+      th {{accountService.value - accountService.cost | currency:'USD':'symbol':'.2'}}
