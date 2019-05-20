@@ -1,0 +1,11 @@
+.row
+  .clr-col-6: a(routerLink="/blogs/{{post_id * 1 - 1}}", "*ngIf"='canPrev')= "< Previous Post"
+  .clr-col-6(style="text-align: right"): a(routerLink="/blogs/{{post_id * 1 + 1}}", "*ngIf"='canNext')= "Next Post >"
+.card
+  .card-header {{post?.title}}
+  .card-block
+    .card-text: p(*ngFor='let line of lines') {{line}}
+    .row
+      .clr-col {{post?.username}}
+      .clr-col(style="text-align: right") {{post?.timestamp | date:'medium'}}
+      

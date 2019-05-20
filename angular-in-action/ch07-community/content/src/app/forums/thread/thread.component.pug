@@ -1,0 +1,7 @@
+h3.title {{thread?.title}}
+.card(*ngFor='let post of thread?.posts')
+  .card-block
+    .card-text {{post.post}}
+    .row 
+      .clr-col {{post.username}}
+      .clr-col(style={"text-align": "right"}) {{post.timestamp | date:'medium'}} 

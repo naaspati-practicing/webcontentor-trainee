@@ -1,0 +1,9 @@
+table.table
+  tr 
+    each val in ['Forum Topic', 'Last Post', 'Threads']
+      th=val
+  tr(*ngFor='let forum of forums;', '[routerLink]'='[forum.alias]')
+    td {{forum.title}}
+    td {{forum.threads[0].title}} by {{forum.threads[0].posts[0].username}} on {{forum.threads[0].posts[0].timestamp | date:'medium'}}
+    td {{forum.threads.length}}
+    

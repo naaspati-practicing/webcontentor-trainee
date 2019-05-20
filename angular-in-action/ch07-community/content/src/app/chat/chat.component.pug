@@ -1,0 +1,14 @@
+.card.wrapper
+  .card-header
+    | Chat with {{guest}} 
+    button.close(aria-label='Close' '(click)'='close()'): clr-icon(aria-hidden="true", shape='close')
+  .card-block(#scrollBox)
+    .card-text
+      .card.message(*ngFor='let message of messages', '[ngClass]'='message.type')
+        .card-block
+          .author {{message.author}}
+          .cart-text {{message.message}}
+  .card-footer
+    form
+      input(type="text", name="message", '[(ngModel)]'='message', placeholder="Mesage to send..", '(keyup)'='onKeyUp($event)')
+      

@@ -1,0 +1,11 @@
+.content-container
+  .content-area
+    table.table(*ngIf='threads')
+      tr
+        each val in ['Thread', 'User', 'Last Post', 'Posts']
+          th=val
+      tr(*ngFor='let thread of threads', '[routerLink]'='[thread.alias]')
+        td {{thread.title}}
+        td {{thread.posts[0].username}}
+        td {{thread.posts[0].timestamp | date:'medium'}}
+        td {{thread.posts.length}}

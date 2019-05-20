@@ -1,0 +1,13 @@
+.content-container
+  .content-area
+    .row
+      .clr-col-6.clr-offset-3
+        .card
+          .card-header Page not found
+          .card-block: .card-text Oops, you tried to go somewhere that doesn't exist.
+          .card-footer
+            mixin btn(text, click)
+              button.btn.btn-sm.btn-link('(click)'=click ? click : false)=text
+            +btn('Go back', 'back()')
+            +btn('View the Forums')
+            +btn('View the Blogs')

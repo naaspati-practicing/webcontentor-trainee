@@ -1,0 +1,9 @@
+.content-container
+  .content-area
+    .login-wrapper
+      form.login('(ngSubmit)'='login()')
+        label.title Login to Community
+        .login-group
+          input#login_username.username(type="text", name="username", '[(ngModel)]'='username' placeholder="Username")
+          input#login_password.password(type="password", name="password", '[(ngModel)]'='password' placeholder="Password")
+          button.btn.btn-primary(type="submit") LOG IN

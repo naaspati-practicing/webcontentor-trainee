@@ -1,0 +1,10 @@
+.card
+  .card-header
+    | Select user to chat with 
+    button( aria-label="Close" class="close" type="button" '(click)'="close()")
+      clr-icon( aria-hidden="true" shape="close")
+  .card-block
+    .card-text
+      clr-tree-node(*ngFor="let user of users", "(click)"="talkTo = user")
+  .card-footer
+    a.btn.btn-sm.btn-link.btn-primary(*ngIf="talkTo" '[routerLink]'="[talkTo]") Start Chat with {{talkTo}}

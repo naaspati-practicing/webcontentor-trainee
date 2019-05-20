@@ -1,3 +1,15 @@
-<p>
-  login works!
-</p>
+
+<div class="content-container">
+  <div class="content-area">
+    <div class="login-wrapper">
+      <form class="login" (ngSubmit)="login()">
+        <label class="title">Login to Community</label>
+        <div class="login-group">
+          <input class="username" id="login_username" type="text" name="username" [(ngModel)]="username" placeholder="Username">
+          <input class="password" id="login_password" type="password" name="password" [(ngModel)]="password" placeholder="Password">
+          <button class="btn btn-primary" type="submit">LOG IN</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

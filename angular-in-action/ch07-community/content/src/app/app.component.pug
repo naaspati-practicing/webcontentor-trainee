@@ -1,0 +1,23 @@
+clr-main-container
+ mixin icon(shape)
+   clr-icon(shape=shape)
+ 
+ header.header.header-3
+   .branding
+     a
+       +icon('group')
+       span.title Community
+   .header-nav
+     a.nav-link(routerLink='/forums'): span.nav-text Forums
+     a.nav-link(routerLink='/blogs'): span.nav-text Blogs
+   .header-actions
+     a.nav-link.nav-icon('[routerLink]'="[{outlets: { chat: ['users']}}]")
+       +icon('talk-bubbles')
+     a.nav-link.nav-icon('(click)'="logout()", *ngIf="!userService.isGuest()")
+       +icon('logout')
+
+ .content-container
+   .content-area: router-outlet
+
+
+router-outlet(name="chat")
