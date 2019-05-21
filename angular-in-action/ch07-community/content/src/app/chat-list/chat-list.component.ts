@@ -19,6 +19,7 @@ export class ChatListComponent implements OnInit {
 
   ngOnInit() {
     this.users = this.forumService.users;
+    console.log(this.users);
   }
   close() {
     this.router.navigate([{outlets: {chat: null}}]);

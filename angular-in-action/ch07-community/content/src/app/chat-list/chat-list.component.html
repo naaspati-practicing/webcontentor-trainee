@@ -7,7 +7,7 @@
   </div>
   <div class="card-block">
     <div class="card-text">
-      <clr-tree-node *ngFor="let user of users" (click)="talkTo = user"></clr-tree-node>
+      <clr-tree-node *ngFor="let user of users" (click)="talkTo = user"><span class="clr-treenode-link" [class.active]="talkTo == user">{{user}}</span></clr-tree-node>
     </div>
   </div>
   <div class="card-footer"><a class="btn btn-sm btn-link btn-primary" *ngIf="talkTo" [routerLink]="[talkTo]">Start Chat with {{talkTo}}</a></div>

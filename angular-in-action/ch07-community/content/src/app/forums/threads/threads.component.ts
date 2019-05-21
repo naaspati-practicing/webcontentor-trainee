@@ -18,7 +18,7 @@ export class ThreadsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.threads = this.forumService.threads('forum_alias');
+      this.threads = this.forumService.threads(params['forum_alias']);
     });
   }
 }

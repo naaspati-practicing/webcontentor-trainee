@@ -6,5 +6,6 @@
   .card-block
     .card-text
       clr-tree-node(*ngFor="let user of users", "(click)"="talkTo = user")
+        span.clr-treenode-link('[class.active]'='talkTo == user') {{user}}
   .card-footer
     a.btn.btn-sm.btn-link.btn-primary(*ngIf="talkTo" '[routerLink]'="[talkTo]") Start Chat with {{talkTo}}

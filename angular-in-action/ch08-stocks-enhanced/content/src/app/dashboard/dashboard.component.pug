@@ -1,0 +1,7 @@
+mat-grid-list(cols=6, rowHeight='150px')
+  mat-grid-tile(*ngIf='!stocks', colspan=3) Loading...
+  mat-grid-tile(colspan=2, *ngFor='let stock from stocks; index as i')
+    summary('[stock]'='stock', *delay='i * 100', cardHover)
+
+
+  

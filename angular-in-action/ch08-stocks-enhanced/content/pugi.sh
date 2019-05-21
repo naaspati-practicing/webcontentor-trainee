@@ -1,0 +1,1 @@
+pug -P -O '{"doctype":"html"}' $@

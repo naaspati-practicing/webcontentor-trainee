@@ -10,7 +10,7 @@ import { RouterModule, Route } from '@angular/router';
 const routes: Route[] = [
   {path: 'forums', component: ForumsComponent},
   {
-    path: 'forum/:forum_alias',
+    path: 'forums/:forum_alias',
     component: ForumComponent,
     children: [
       {path: '', component: ThreadsComponent},

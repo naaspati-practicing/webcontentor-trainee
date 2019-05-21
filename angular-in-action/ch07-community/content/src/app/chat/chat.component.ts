@@ -61,7 +61,10 @@ export class ChatComponent implements OnInit, AfterContentChecked {
   }
 
   private reply() {
-    setTimeout(() => this.addMessage(this.guest, this.chatBotServices.respond(), 'right'), 2500);
+    setTimeout(() => {
+      this.addMessage(this.guest, this.chatBotServices.respond(), 'right');
+      this.scrollToBottom();
+    }, 2500);
   }
 
 }
