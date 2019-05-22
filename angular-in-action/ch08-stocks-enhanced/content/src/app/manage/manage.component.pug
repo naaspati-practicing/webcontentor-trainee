@@ -1,0 +1,12 @@
+mat-grid-list
+  mat-grid-tile(colspan=4)
+  mat-grid-tile(colspan=4)
+   form('(submit)'='add()')
+     mat-form-field
+       input(matInput, placeholder="Add Stock", '[(ngModel)]'='stock', type='text')
+   table.mat-table
+     tbody
+       tr(*ngFor='let symbol of symbols')
+         td {{symbol}}
+         td: button.mat-button("(click)"='remove(symbol)') Remove
+  mat-grid-tile(colspan=4)

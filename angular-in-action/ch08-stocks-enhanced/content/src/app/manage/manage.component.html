@@ -1,3 +1,22 @@
-<p>
-  manage works!
-</p>
+
+<mat-grid-list>
+  <mat-grid-tile colspan="4"></mat-grid-tile>
+  <mat-grid-tile colspan="4">
+    <form (submit)="add()">
+      <mat-form-field>
+        <input matInput placeholder="Add Stock" [(ngModel)]="stock" type="text">
+      </mat-form-field>
+    </form>
+    <table class="mat-table">
+      <tbody>
+        <tr *ngFor="let symbol of symbols">
+          <td>{{symbol}}</td>
+          <td>
+            <button class="mat-button" (click)="remove(symbol)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="4"></mat-grid-tile>
+</mat-grid-list>

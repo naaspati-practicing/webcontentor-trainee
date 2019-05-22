@@ -1,34 +1,57 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CardTypeDirective } from './directives/card-type.directive';
+import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardHoverDirective } from './directives/card-hover.directive';
+import { CardTypeDirective } from './directives/card-type.directive';
 import { DelayDirective } from './directives/delay.directive';
+import { ManageComponent } from './manage/manage.component';
+import { ChangeDetectorPipe } from './pipes/change-detector.pipe';
 import { ChangePipe } from './pipes/change.pipe';
 import { NewsPipe } from './pipes/news.pipe';
-import { ChangeDetectorPipe } from './pipes/change-detector.pipe';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ManageComponent } from './manage/manage.component';
+import { SummaryComponent } from './summary/summary.component';
+import { StocksService } from './services/stocks.service';
+import { CurrencyPipe, PercentPipe } from '@angular/common';
+
+
+
+const routes:Routes = [
+  {
+    path: '',
+    component: DashboardComponent
+  },
+  {
+    path: 'manage',
+    component: ManageComponent
+  }
+];
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    SummaryComponent,
+    DashboardComponent,
+    ManageComponent,
     CardTypeDirective,
     CardHoverDirective,
     DelayDirective,
     ChangePipe,
-    NewsPipe,
     ChangeDetectorPipe,
-    DashboardComponent,
-    ManageComponent
+    NewsPipe
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    StocksService, 
+    CurrencyPipe, 
+    PercentPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
